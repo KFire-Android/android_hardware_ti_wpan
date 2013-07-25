@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 
-ifeq ($(TARGET_DEVICE),panda)
-
 LOCAL_PATH := $(call my-dir)
+BLUEDROID_PATH := external/bluetooth/bluedroid/
 include $(CLEAR_VARS)
 
-LOCAL_C_INCLUDES := external/bluetooth/bluedroid/hci/include
+LOCAL_C_INCLUDES :=\
+	$(BLUEDROID_PATH)/hci/include
 
 LOCAL_CFLAGS := -g -c -W -Wall -O2 -D_POSIX_SOURCE
 
@@ -38,4 +38,3 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 
 include $(BUILD_SHARED_LIBRARY)
 
-endif # panda
